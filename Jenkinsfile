@@ -2,18 +2,13 @@ pipeline {
     agent any
 
     stages {
-        stage('Install Node') {
-            steps {
-                sh '''
-                apt-get update
-                apt-get install -y nodejs npm
-                '''
-            }
-        }
-
         stage('Run App') {
             steps {
-                sh 'node index.js'
+                sh '''
+                curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+                apt-get install -y nodejs
+                node index.js
+                '''
             }
         }
     }
