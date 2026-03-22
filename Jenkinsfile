@@ -5,7 +5,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git 'https://github.com/kavazik1/nodejs-jenkins-demo.git'
+                git 'https://github.com/kavazik1/nodes-jenkins-demo.git'
             }
         }
 
