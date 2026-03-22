@@ -2,19 +2,11 @@ pipeline {
     agent any
 
     stages {
-        stage('Install Node') {
+        stage('Build') {
             steps {
                 sh '''
-                whoami
-                sudo apt-get update
-                sudo apt-get install -y nodejs npm
+                echo "Hello from Jenkins CI/CD"
                 '''
-            }
-        }
-
-        stage('Run App') {
-            steps {
-                sh 'node index.js'
             }
         }
     }
